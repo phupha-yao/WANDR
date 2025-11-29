@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="d-flex flex-wrap">
+    <div class="booking-item me-auto">
+        <h3>Rooms available for today</h3>
+        <div class="border-blue p-4 bg-white" role="group" id="rooms-available">
+            {% for room in rooms %}
+                <!-- <input type="radio" class="btn-check" name="RID" id="{{ room }}" autocomplete="off"> -->
+                <button class="room-btn btn btn-outline-primary" for="{{ room }}" data-bs-toggle="modal" data-bs-target="#exampleModal">{{ room }}</button>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% include "modal.html" %}
+<script src="/static/script.js" type="module"></script>
+{% endblock %}

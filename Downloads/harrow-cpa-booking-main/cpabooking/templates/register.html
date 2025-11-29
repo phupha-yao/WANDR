@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <form action="" method="POST" class="reg-form mx-auto">
+        <h3>Register new account</h3>
+        {{ form.hidden_tag() }}
+        <div class="mb-1"> <!-- USERNAME -->
+            
+            {{ form.username.label(class="form-label") }} 
+            {% if form.username.errors %}
+                {{ form.username(class="form-field is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.username.errors %}
+                        <span style="color:red;"> {{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.username(class="form-field form-control") }}
+            {% endif %}
+        </div>
+
+        <div class="mb-1"> <!-- EMAIL -->
+            {{ form.email.label(class="form-label") }} 
+            {% if form.email.errors %}
+                {{ form.email(class="form-field is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.email.errors %}
+                        <span style="color:red;"> {{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.email(class="form-field form-control") }}
+            {% endif %}
+        </div>
+
+        <div class="mb-1"> <!-- PASSWORD -->
+            {{ form.password.label(class="form-label") }} 
+            {% if form.password.errors %}
+                {{ form.password(class="form-field is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.password.errors %}
+                        <span style="color:red;"> {{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.password(class="form-field form-control") }}
+            {% endif %}
+        </div>
+
+        <div class="mb-1"> <!-- CONFIRM PASSWORD -->
+            {{ form.confirm_password.label(class="form-label") }} 
+            {% if form.confirm_password.errors %}
+                {{ form.confirm_password(class="form-field is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.confirm_password.errors %}
+                        <span style="color:red;"> {{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.confirm_password(class="form-field form-control") }}
+            {% endif %}
+        </div>
+
+        <!-- For tutor group -->
+        <label class="mb-1">Tutor group</label>
+        <div class="d-flex mb-3">
+            <div class="w-25 me-3">
+                {{ form.house.label(class="text-secondary")}}
+                {% if form.house.errors %}
+                    {{ form.house(class="form-field is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.password.errors %}
+                            <span style="color:red;"> {{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.house(class="form-field form-control") }}
+                {% endif %}        
+            </div>
+            <div class="w-25">
+                {{ form.year.label(class="text-secondary")}}
+                {% if form.year.errors %}
+                    {{ form.year(class="form-field is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.password.errors %}
+                            <span style="color:red;"> {{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.year(class="form-field form-control") }}
+                {% endif %}        
+            </div>
+        </div>        
+        <div>
+            {{ form.submit(class="btn btn-light border") }}
+        </div>
+    </form> 
+{% endblock %}

@@ -1,0 +1,57 @@
+:root {
+    --lightgrey: #EDEDED;
+    --darkblue: #031643;
+}
+.bg-lightgrey {
+    background-color: var(--lightgrey);
+}
+
+.bg-blue {
+    background-color: var(--darkblue);
+}
+.border-blue {
+    border: var(--darkblue) 3px solid !important;
+}
+
+.nav-item {
+    margin: 0 2rem 0 2rem;
+}
+
+.booking-item {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.invalid-feedback {
+    font-size: 0.75em;
+    color: red;
+}
+
+/* .is-invalid {
+    border-color: red;
+    border-radius: 0.1em;
+} */
+
+.form-field {
+    margin: 0px 0px;
+}
+
+.reg-form {
+    width: 100%;
+    margin: auto;
+}
+
+#rooms-available {
+    height: 25rem;
+    overflow: scroll;
+}
+
+.room-btn {
+    width: 5rem;
+}
+
+@media screen and (min-width: 600px) {
+    .reg-form {
+        width: 50%;
+    }
+}
